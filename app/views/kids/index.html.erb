@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><p>Happy Kid</p></a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Trang Chủ"  %></li>
+            
+            <li><%= link_to "Đăng Xuất" %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<p id="notice"><%= notice %></p>
+<br><br><br>
+<div><h1>Danh Sách</h1></div>
+
+<table class="table table-striped">
+      <th>Họ Và Tên</th>
+      <th>Ngày Sinh</th>
+      <th>Chiều Cao(Cm)</th>
+      <th>Cân Nặng(Kg)</th>
+      <th>Sở Thích</th>
+      <th colspan="3"></th>
+      <tbody>
+    <% @kids.each do |kid| %>
+      <tr>
+        <td><%= kid.name %></td>
+        <td><%= kid.birthday %></td>
+        <td><%= kid.hight %></td>
+        <td><%= kid.weight %></td>
+        <td><%= kid.hobby %></td>
+        <td><button class="btn btn-default" type="submit"><%= link_to 'Xem', kid %></button></td>
+        <td><button class="btn btn-default" type="submit"><%= link_to 'Sửa', edit_kid_path(kid) %></button></td>
+        <td><button class="btn btn-default" type="submit"><%= link_to 'Xóa', kid, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<button class="btn btn-default" type="submit"><%= link_to 'Thêm', new_kid_path %></button>
+
+</body>
+</html>

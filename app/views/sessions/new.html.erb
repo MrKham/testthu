@@ -1,0 +1,22 @@
+<% provide(:title, "Log in") %>
+<h1>Đăng Nhập</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email,"Tài Khoản" %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password,"Mật Khậu" %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>Ghi Nhớ Đăng Nhập?</span>
+      <% end %>
+      <%= f.submit "Đăng Nhập", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>Bạn Chưa Có Tài Khoản? <%= link_to "Đăng Ký Ngay!", signup_path %></p>
+  </div>
+</div>

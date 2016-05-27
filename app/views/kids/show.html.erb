@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<div>
+<p>
+  <strong>Họ Và Tên:</strong>
+  <%= @kid.name %>
+</p>
+
+<p>
+  <strong>Ngày Sinh:</strong>
+  <%= @kid.birthday %>
+</p>
+
+<p>
+  <strong>Chiều Cao:</strong>
+  <%= @kid.hight %>
+</p>
+
+<p>
+  <strong>Cân Nặng:</strong>
+  <%= @kid.weight %>
+</p>
+
+<p>
+  <strong>Sở Thích:</strong>
+  <%= @kid.hobby %>
+</p>
+<p>
+  <strong>IBM:</strong>
+ <%= @kid.weight.to_f / ((@kid.hight.to_f / 100)**2) %>
+</p>
+
+<button type="button" class="btn btn-default"><%= link_to 'Sửa', edit_kid_path(@kid) %></button> |
+<button type="button" class="btn btn-default"><%= link_to 'Trở Lại', kids_path %></button>
+</div>
